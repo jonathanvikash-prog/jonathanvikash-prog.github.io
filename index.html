@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Jonathan Bernard | Mechatronics Engineering
+    </title>
+
+    <meta
+        name="description"
+        content="Jonathan Bernard — Mechatronics Engineering undergraduate focused on robotics, industrial automation, embedded systems, computer vision, and OT/ICS cybersecurity."
+    >
+
+    <meta
+        name="author"
+        content="Jonathan Bernard"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <!-- Open Graph / Social Preview -->
+
+    <meta
+        property="og:title"
+        content="Jonathan Bernard | Mechatronics Engineering"
+    >
+
+    <meta
+        property="og:description"
+        content="Mechatronics Engineering undergraduate focused on robotics, industrial automation, embedded systems, computer vision, and OT/ICS cybersecurity."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:image"
+        content="images/profile.jpeg"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Jonathan Bernard"
+    >
+
+    <meta
+        property="og:url"
+        content="YOUR_WEBSITE_URL"
+    >
+
+    <!-- Favicon -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         NAVIGATION
+         ============================== -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <img
+                src="images/profile.jpeg"
+                alt="Jonathan Bernard"
+                class="profile-picture"
+                tabindex="0"
+                role="button"
+                aria-label="Open Jonathan Bernard profile photo"
+                onclick="openProfile()"
+                onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProfile(); }"
+            >
+
+            <span class="brand-name">
+                Jonathan Bernard
+            </span>
+
+        </div>
+
+
+        <!-- Desktop navigation -->
+
+        <div
+            class="nav-links"
+            id="nav-links"
+        >
+
+            <a href="#about" onclick="closeMobileMenu()">About</a>
+
+            <a href="#education" onclick="closeMobileMenu()">Education</a>
+
+            <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+
+            <a href="#certifications" onclick="closeMobileMenu()">Certifications</a>
+
+            <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+
+            <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+
+            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+
+        </div>
+
+
+        <!-- Mobile hamburger -->
+
+        <button
+            class="menu-button"
+            id="menu-button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            onclick="toggleMobileMenu()"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- ==============================
+         PROFILE IMAGE MODAL
+         ============================== -->
+
+    <div
+        id="profile-modal"
+        class="profile-modal"
+        onclick="closeProfile()"
+    >
+
+        <span
+            class="close-button"
+            onclick="closeProfile()"
+        >
+            &times;
+        </span>
+
+
+        <img
+            src="images/profile.jpeg"
+            alt="Jonathan Bernard"
+            class="profile-large"
+            onclick="event.stopPropagation()"
+        >
+
+    </div>
+
+
+
+    <!-- ==============================
+         HERO
+         ============================== -->
+
+    <section class="hero">
+
+        <p class="eyebrow">
+            ROBOTICS · AUTOMATION · INDUSTRIAL TECHNOLOGY · OT SECURITY
+        </p>
+
+
+        <h1>
+            Jonathan Bernard
+        </h1>
+
+
+        <p class="hero-description">
+
+            Mechatronics Engineering undergraduate focused on robotics,
+            intelligent automation, industrial technology, and
+            Operational Technology (OT) security.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#projects"
+                class="button primary-button"
+            >
+                Explore Portfolio
+            </a>
+
+
+            <a
+                href="CV.pdf"
+                class="button secondary-button"
+                download="Jonathan_Bernard_CV.pdf"
+            >
+                Download CV
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         ABOUT
+         ============================== -->
+
+    <section id="about">
+
+        <h2>
+            About Me
+        </h2>
+
+
+        <p class="about-text">
+
+            Mechatronics Engineering undergraduate
+            (BEng Hons, ongoing) with a Higher Diploma and
+            hands-on experience in robotics, embedded systems,
+            AI-driven automation, and OT cybersecurity.
+
+            Skilled in ROS 2, ESP32, computer vision,
+            industrial network monitoring, asset discovery,
+            and ICS/SCADA security.
+
+            Interested in robotics, industrial automation,
+            and OT security.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ==============================
+         EDUCATION
+         ============================== -->
+
+    <section id="education">
+
+        <h2>
+            Education
+        </h2>
+
+
+        <!-- BEng -->
+
+        <div class="education-item">
+
+            <h3>
+                BEng (Hons) Mechatronics Engineering
+            </h3>
+
+
+            <p class="education-institution">
+                Liverpool John Moores University
+            </p>
+
+
+            <p class="education-status">
+                Currently Studying · Expected Completion: 2027
+            </p>
+
+        </div>
+
+
+
+        <!-- HND -->
+
+        <div class="education-item">
+
+            <h3>
+                Higher National Diploma (HND) in Mechatronics Engineering
+            </h3>
+
+
+            <p class="education-institution">
+                Liverpool John Moores University
+            </p>
+
+
+            <p class="education-result">
+                Passed with <strong>Distinction</strong>
+            </p>
+
+
+            <a
+                href="Final%20transcript.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="education-document-button"
+            >
+
+                View Official Transcript
+
+                <span>↗</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         PROJECTS
+         ============================== -->
+
+    <section id="projects">
+
+        <h2>
+            Academic Projects
+        </h2>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project-card">
+
+                <div class="project-gallery">
+
+                    <img
+                        id="sorting-image"
+                        src="images/project-sorting/project-sorting1.jpeg"
+                        alt="Automated Vegetable Quality Grading and Sorting Machine"
+                        class="project-image"
+                        onclick="openProjectGallery('sorting')"
+                    >
+
+
+                    <button
+                        class="gallery-button gallery-prev"
+                        onclick="changeProjectImage('sorting', -1)"
+                        aria-label="Previous image"
+                    >
+                        &#10094;
+                    </button>
+
+
+                    <button
+                        class="gallery-button gallery-next"
+                        onclick="changeProjectImage('sorting', 1)"
+                        aria-label="Next image"
+                    >
+                        &#10095;
+                    </button>
+
+
+                    <div
+                        id="sorting-dots"
+                        class="gallery-dots"
+                    ></div>
+
+                </div>
+
+
+                <p class="project-number">
+                    01
+                </p>
+
+
+                <h3>
+                    Automated Vegetable Quality Grading & Sorting Machine
+                </h3>
+
+
+                <p class="project-overview">
+
+                    A machine-vision-based automated sorting system
+                    developed to identify and sort two types of
+                    vegetables — <strong>carrots and brinjals</strong> —
+                    based on their visual characteristics.
+
+                </p>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Project Focus
+                    </h4>
+
+                    <p>
+
+                        The system combines computer vision,
+                        embedded control, sensors, motors and
+                        mechanical sorting mechanisms to automate
+                        vegetable handling with minimal human
+                        intervention.
+
+                    </p>
+
+                </div>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Key Engineering Features
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            YOLO-based computer vision for
+                            vegetable detection and classification
+                        </li>
+
+                        <li>
+                            Rotary wheel dispenser for controlled
+                            vegetable feeding
+                        </li>
+
+                        <li>
+                            Conveyor-based transportation and
+                            sorting mechanism
+                        </li>
+
+                        <li>
+                            ESP32-based distributed control system
+                        </li>
+
+                        <li>
+                            Photoelectric sensor synchronization
+                            between detection and sorting
+                        </li>
+
+                        <li>
+                            Servo-controlled mechanical sorting gates
+                        </li>
+
+                        <li>
+                            Real-time hardware and software integration
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <p class="project-tech">
+
+                    YOLO · OpenCV · Python · ESP32 · Embedded C++
+                    · MG90S Servo · NEMA Stepper · TB6600 / DRV8825
+
+                </p>
+
+
+                <a
+                    href="https://drive.google.com/drive/folders/1LuhMbtPvTU1kaI0_sQxK8Jq0Rzh6Au0m"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-video-button"
+                >
+
+                    View Project Videos
+
+                    <span>↗</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project-card">
+
+                <div class="project-gallery">
+
+                    <img
+                        id="ros2-image"
+                        src="images/project-ros2/project-ros21.jpeg"
+                        alt="ROS 2 Robot Simulation"
+                        class="project-image"
+                        onclick="openProjectGallery('ros2')"
+                    >
+
+
+                    <button
+                        class="gallery-button gallery-prev"
+                        onclick="changeProjectImage('ros2', -1)"
+                        aria-label="Previous image"
+                    >
+                        &#10094;
+                    </button>
+
+
+                    <button
+                        class="gallery-button gallery-next"
+                        onclick="changeProjectImage('ros2', 1)"
+                        aria-label="Next image"
+                    >
+                        &#10095;
+                    </button>
+
+
+                    <div
+                        id="ros2-dots"
+                        class="gallery-dots"
+                    ></div>
+
+                </div>
+
+
+                <p class="project-number">
+                    02
+                </p>
+
+
+                <h3>
+                    ROS 2 Robot Simulation
+                </h3>
+
+
+                <p class="project-overview">
+
+                    A robotics simulation project focused on
+                    building and testing robot models in a virtual
+                    environment using ROS 2 Humble.
+
+                </p>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Project Focus
+                    </h4>
+
+                    <p>
+
+                        The project explored robot modelling,
+                        simulation, visualization and software
+                        organization using the ROS 2 ecosystem
+                        before physical deployment.
+
+                    </p>
+
+                </div>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Key Engineering Features
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Robot modelling using URDF and Xacro
+                        </li>
+
+                        <li>
+                            Link and joint configuration for
+                            simulated robot structures
+                        </li>
+
+                        <li>
+                            Physics-based simulation using Gazebo
+                        </li>
+
+                        <li>
+                            Robot visualization and sensor data
+                            monitoring using RViz
+                        </li>
+
+                        <li>
+                            ROS 2 package organization and
+                            launch file configuration
+                        </li>
+
+                        <li>
+                            Integration of robot models,
+                            sensors and simulation environments
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <p class="project-tech">
+
+                    ROS 2 Humble · Gazebo · RViz · URDF ·
+                    Xacro · Linux · Robot Simulation
+
+                </p>
+
+
+                <a
+                    href="https://drive.google.com/drive/folders/1jfVESrFRdPbQkW_jP1fZEc4yWBTK2-HI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-video-button"
+                >
+
+                    View Project Videos
+
+                    <span>↗</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project-card">
+
+                <div class="project-gallery">
+
+                    <img
+                        id="pet-image"
+                        src="images/project-pet-feeder/project-pet-feeder1.jpeg"
+                        alt="Smart Automated Pet Feeder"
+                        class="project-image"
+                        onclick="openProjectGallery('pet')"
+                    >
+
+
+                    <button
+                        class="gallery-button gallery-prev"
+                        onclick="changeProjectImage('pet', -1)"
+                        aria-label="Previous image"
+                    >
+                        &#10094;
+                    </button>
+
+
+                    <button
+                        class="gallery-button gallery-next"
+                        onclick="changeProjectImage('pet', 1)"
+                        aria-label="Next image"
+                    >
+                        &#10095;
+                    </button>
+
+
+                    <div
+                        id="pet-dots"
+                        class="gallery-dots"
+                    ></div>
+
+                </div>
+
+
+                <p class="project-number">
+                    03
+                </p>
+
+
+                <h3>
+                    Smart Automated Pet Feeder
+                </h3>
+
+
+                <p class="project-overview">
+
+                    An IoT-enabled automated pet-care system
+                    designed to remotely monitor and control
+                    feeding while integrating computer vision,
+                    sensors and embedded control.
+
+                </p>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Project Focus
+                    </h4>
+
+                    <p>
+
+                        The system allows the user to monitor food
+                        levels, detect the presence of a pet and
+                        remotely control feeding through an IoT
+                        interface.
+
+                    </p>
+
+                </div>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Key Engineering Features
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            ESP32 and ESP32-CAM based embedded system
+                        </li>
+
+                        <li>
+                            AI-based pet detection using Edge Impulse
+                        </li>
+
+                        <li>
+                            Servo-controlled food dispensing mechanism
+                        </li>
+
+                        <li>
+                            Servo-controlled feeding plate
+                        </li>
+
+                        <li>
+                            Ultrasonic sensors for food-level monitoring
+                        </li>
+
+                        <li>
+                            OLED display for real-time status information
+                        </li>
+
+                        <li>
+                            Remote control and monitoring through Blynk IoT
+                        </li>
+
+                        <li>
+                            Live video monitoring through the camera system
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <p class="project-tech">
+
+                    ESP32 · ESP32-CAM · Edge Impulse · Blynk IoT ·
+                    Ultrasonic Sensors · OLED · Servo Motors
+
+                </p>
+
+
+                <a
+                    href="https://drive.google.com/file/d/1RZ7X2-B50vd0crqzi8QL59iqKlChJ3k7/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-video-button"
+                >
+
+                    View Project Video
+
+                    <span>↗</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project-card">
+
+                <div class="project-gallery">
+
+                    <img
+                        id="street-image"
+                        src="images/project-street-light/project-street-light1.jpeg"
+                        alt="Smart Street Light System"
+                        class="project-image"
+                        onclick="openProjectGallery('street')"
+                    >
+
+
+                    <button
+                        class="gallery-button gallery-prev"
+                        onclick="changeProjectImage('street', -1)"
+                        aria-label="Previous image"
+                    >
+                        &#10094;
+                    </button>
+
+
+                    <button
+                        class="gallery-button gallery-next"
+                        onclick="changeProjectImage('street', 1)"
+                        aria-label="Next image"
+                    >
+                        &#10095;
+                    </button>
+
+
+                    <div
+                        id="street-dots"
+                        class="gallery-dots"
+                    ></div>
+
+                </div>
+
+
+                <p class="project-number">
+                    04
+                </p>
+
+
+                <h3>
+                    Smart Street Light System
+                </h3>
+
+
+                <p class="project-overview">
+
+                    An embedded automation system designed to
+                    reduce unnecessary energy consumption by
+                    automatically adjusting street-light intensity
+                    according to ambient light and motion.
+
+                </p>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Project Focus
+                    </h4>
+
+                    <p>
+
+                        The system combines ambient-light sensing
+                        with motion detection to keep lights at
+                        low brightness during normal conditions
+                        and increase illumination when movement
+                        is detected.
+
+                    </p>
+
+                </div>
+
+
+                <div class="project-detail">
+
+                    <h4>
+                        Key Engineering Features
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            PIC16F877A microcontroller-based control
+                        </li>
+
+                        <li>
+                            LDR-based ambient light detection
+                        </li>
+
+                        <li>
+                            Two IR proximity sensors for motion detection
+                        </li>
+
+                        <li>
+                            PWM-based LED brightness control
+                        </li>
+
+                        <li>
+                            Low-power 10% illumination during
+                            low-light conditions
+                        </li>
+
+                        <li>
+                            Automatic increase to 100% brightness
+                            when motion is detected
+                        </li>
+
+                        <li>
+                            Fully assembled and soldered on dot board
+                            for physical hardware implementation
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <p class="project-tech">
+
+                    PIC16F877A · Embedded C · mikroC PRO ·
+                    Proteus · PICkit3 · PWM · LDR · IR Sensors
+
+                </p>
+
+
+                <a
+                    href="https://drive.google.com/drive/folders/1XeV_czfG_UZK1NAcsCjLTshUbxmJZ58u"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-video-button"
+                >
+
+                    View Project Videos
+
+                    <span>↗</span>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         PROJECT IMAGE MODAL
+         ============================== -->
+
+    <div
+        id="project-modal"
+        class="project-modal"
+    >
+
+        <button
+            class="modal-close"
+            onclick="closeProjectGallery()"
+            aria-label="Close project gallery"
+        >
+            &times;
+        </button>
+
+
+        <button
+            class="modal-arrow modal-prev"
+            onclick="changeModalImage(-1)"
+            aria-label="Previous project image"
+        >
+            &#10094;
+        </button>
+
+
+        <img
+            id="modal-project-image"
+            class="modal-project-image"
+            src=""
+            alt="Project image"
+        >
+
+
+        <button
+            class="modal-arrow modal-next"
+            onclick="changeModalImage(1)"
+            aria-label="Next project image"
+        >
+            &#10095;
+        </button>
+
+
+        <div
+            id="modal-counter"
+            class="modal-counter"
+        ></div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         CERTIFICATIONS
+         ============================== -->
+
+    <section id="certifications">
+
+        <h2>
+            Certifications
+        </h2>
+
+
+        <div class="certificates-wrapper">
+
+            <button
+                class="certificate-arrow certificate-prev"
+                onclick="moveCertificates(-1)"
+                aria-label="Previous certification"
+            >
+                &#10094;
+            </button>
+
+
+            <div class="certificates-viewport">
+
+                <div
+                    class="certificates-track"
+                    id="certificates-track"
+                >
+
+
+                    <!-- NSE 3 -->
+
+                    <article class="certificate-card">
+
+                        <div class="certificate-image-wrapper">
+
+                            <img
+                                src="images/certificates/fortinet-nse3.jpeg"
+                                alt="Fortinet NSE 3 Certified in Cybersecurity"
+                                class="certificate-image certificate-standard"
+                                onclick="openCertificate(0)"
+                            >
+
+                        </div>
+
+                        <div class="certificate-info">
+
+                            <p class="certificate-number">
+                                01
+                            </p>
+
+                            <h3>
+                                Fortinet NSE 3
+                            </h3>
+
+                            <p>
+                                Certified in Cybersecurity
+                            </p>
+
+                            <span>
+                                Fortinet · 2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- NSE 2 -->
+
+                    <article class="certificate-card">
+
+                        <div class="certificate-image-wrapper">
+
+                            <img
+                                src="images/certificates/fortinet-nse2.jpeg"
+                                alt="Fortinet NSE 2 Certified in Cybersecurity"
+                                class="certificate-image certificate-standard"
+                                onclick="openCertificate(1)"
+                            >
+
+                        </div>
+
+                        <div class="certificate-info">
+
+                            <p class="certificate-number">
+                                02
+                            </p>
+
+                            <h3>
+                                Fortinet NSE 2
+                            </h3>
+
+                            <p>
+                                Certified in Cybersecurity
+                            </p>
+
+                            <span>
+                                Fortinet · 2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- NSE 1 -->
+
+                    <article class="certificate-card">
+
+                        <div class="certificate-image-wrapper">
+
+                            <img
+                                src="images/certificates/fortinet-nse1.jpeg"
+                                alt="Fortinet NSE 1 Certified in Cybersecurity"
+                                class="certificate-image certificate-standard"
+                                onclick="openCertificate(2)"
+                            >
+
+                        </div>
+
+                        <div class="certificate-info">
+
+                            <p class="certificate-number">
+                                03
+                            </p>
+
+                            <h3>
+                                Fortinet NSE 1
+                            </h3>
+
+                            <p>
+                                Certified in Cybersecurity
+                            </p>
+
+                            <span>
+                                Fortinet · 2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- OT SECURITY -->
+
+                    <article class="certificate-card">
+
+                        <div class="certificate-image-wrapper certificate-ot-wrapper">
+
+                            <img
+                                src="images/certificates/fortinet-ot-security.jpeg"
+                                alt="Fortinet OT Security 7.6 Architect Lessons"
+                                class="certificate-image certificate-ot"
+                                onclick="openCertificate(3)"
+                            >
+
+                        </div>
+
+                        <div class="certificate-info">
+
+                            <p class="certificate-number">
+                                04
+                            </p>
+
+                            <h3>
+                                Fortinet OT Security 7.6 Architect
+                            </h3>
+
+                            <p>
+                                Lessons
+                            </p>
+
+                            <span>
+                                Fortinet · 2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- MATLAB -->
+
+                    <article class="certificate-card">
+
+                        <div class="certificate-image-wrapper certificate-matlab-wrapper">
+
+                            <img
+                                src="images/certificates/matlab-onramp.jpeg"
+                                alt="MATLAB Onramp"
+                                class="certificate-image certificate-matlab"
+                                onclick="openCertificate(4)"
+                            >
+
+                        </div>
+
+                        <div class="certificate-info">
+
+                            <p class="certificate-number">
+                                05
+                            </p>
+
+                            <h3>
+                                MATLAB Onramp
+                            </h3>
+
+                            <p>
+                                MATLAB Fundamentals
+                            </p>
+
+                            <span>
+                                MathWorks · 2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="certificate-arrow certificate-next"
+                onclick="moveCertificates(1)"
+                aria-label="Next certification"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+
+        <div
+            class="certificate-dots"
+            id="certificate-dots"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CERTIFICATE MODAL
+         ============================== -->
+
+    <div
+        id="certificate-modal"
+        class="certificate-modal"
+        onclick="closeCertificate()"
+    >
+
+        <button
+            class="certificate-modal-close"
+            onclick="closeCertificate()"
+            aria-label="Close certificate"
+        >
+            &times;
+        </button>
+
+
+        <img
+            id="certificate-modal-image"
+            class="certificate-modal-image"
+            src=""
+            alt="Certificate"
+            onclick="event.stopPropagation()"
+        >
+
+    </div>
+
+
+
+    <!-- ==============================
+         EXPERIENCE
+         ============================== -->
+
+    <section id="experience">
+
+        <h2>
+            Experience
+        </h2>
+
+
+        <div class="experience-item">
+
+            <h3>
+                Operational Technology Security Engineer — Intern
+            </h3>
+
+
+            <p class="experience-company">
+
+                Innovar (Private) Limited ·
+                June 2026 – Present
+
+            </p>
+
+
+            <ul class="experience-list">
+
+                <li>
+                    Gained hands-on experience in OT/ICS cybersecurity,
+                    supporting security monitoring and protection of
+                    industrial environments.
+                </li>
+
+
+                <li>
+                    Worked with ICS/SCADA security concepts,
+                    industrial network monitoring, OT asset discovery,
+                    vulnerability assessment, and security analysis.
+                </li>
+
+
+                <li>
+                    Gained exposure to OT security technologies including
+                    Nozomi Networks and Fortinet.
+                </li>
+
+            </ul>
+
+
+            <div class="experience-tech">
+
+                <span>OT/ICS Security</span>
+                <span>ICS/SCADA</span>
+                <span>Nozomi Networks</span>
+                <span>Fortinet</span>
+                <span>Network Security</span>
+                <span>Asset Discovery</span>
+                <span>Vulnerability Assessment</span>
+                <span>Industrial Network Monitoring</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         SKILLS
+         ============================== -->
+
+    <section id="skills">
+
+        <h2>
+            Skills
+        </h2>
+
+
+        <div class="skills-list">
+
+            <span>Robotics</span>
+            <span>Industrial Automation</span>
+            <span>Embedded Systems</span>
+            <span>Computer Vision</span>
+            <span>Python</span>
+            <span>C / C++</span>
+            <span>ROS 2</span>
+            <span>ESP32</span>
+            <span>PIC Microcontrollers</span>
+            <span>OT / ICS Security</span>
+            <span>ICS / SCADA</span>
+            <span>Industrial Network Monitoring</span>
+            <span>Asset Discovery</span>
+            <span>Nozomi Networks</span>
+            <span>Fortinet</span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CONTACT
+         ============================== -->
+
+    <section id="contact">
+
+        <h2>
+            Let's Connect
+        </h2>
+
+
+        <p>
+
+            Email:
+
+            <a href="mailto:jonathanvikash@gmail.com">
+                jonathanvikash@gmail.com
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <a
+                href="https://www.linkedin.com/in/jonathan2003"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <a
+                href="https://github.com/jonathanvikash-prog"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+        </p>
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
