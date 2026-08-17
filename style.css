@@ -358,6 +358,8 @@ button:focus-visible,
 
 #about {
     padding-top: 35px;
+
+    scroll-margin-top: 95px;
 }
 
 .about-text {
@@ -437,6 +439,11 @@ button:focus-visible,
 
     font-size: 0.95rem;
 }
+
+
+/* =========================================
+   PROJECT OVERVIEW
+   ========================================= */
 
 .project-overview {
     margin-bottom: 22px;
@@ -545,13 +552,21 @@ button:focus-visible,
     border-radius: 9px;
 
     background: #080c10;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
 .project-image {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
+
+    object-position: center center;
 
     cursor: pointer;
 
@@ -610,6 +625,8 @@ button:focus-visible,
     display: flex;
 
     gap: 6px;
+
+    z-index: 6;
 }
 
 .gallery-dot {
@@ -697,6 +714,9 @@ button:focus-visible,
     max-width: 82vw;
 
     max-height: 82vh;
+
+    width: auto;
+    height: auto;
 
     object-fit: contain;
 
@@ -795,6 +815,8 @@ button:focus-visible,
 
     transition:
         transform 0.5s ease;
+
+    will-change: transform;
 }
 
 .certificate-card {
@@ -837,54 +859,7 @@ button:focus-visible,
     justify-content: center;
 }
 
-
-/*
-   Standard certificates:
-   preserve the complete certificate
-   and keep it centered.
-*/
-
-.certificate-standard {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center;
-}
-
-
-/*
-   OT Security certificate:
-   aligned to the TOP so the beginning
-   of the certificate is visible.
-*/
-
-.certificate-ot-wrapper {
-    align-items: flex-start;
-}
-
-.certificate-ot {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center top;
-}
-
-
-/*
-   MATLAB Onramp:
-   centered horizontally and vertically.
-*/
-
-.certificate-matlab-wrapper {
-    align-items: center;
-    justify-content: center;
-}
-
-.certificate-matlab {
+.certificate-image {
     width: 100%;
     height: 100%;
 
@@ -893,10 +868,7 @@ button:focus-visible,
     object-position: center center;
 
     display: block;
-}
 
-
-.certificate-image {
     cursor: pointer;
 
     transition:
@@ -905,6 +877,30 @@ button:focus-visible,
 
 .certificate-image:hover {
     transform: scale(1.03);
+}
+
+.certificate-standard {
+    object-position: center center;
+}
+
+.certificate-ot-wrapper {
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+.certificate-ot {
+    object-position: center top;
+}
+
+.certificate-matlab-wrapper {
+    align-items: center;
+
+    justify-content: center;
+}
+
+.certificate-matlab {
+    object-position: center center;
 }
 
 .certificate-info {
@@ -1043,6 +1039,9 @@ button:focus-visible,
     max-width: 90vw;
 
     max-height: 88vh;
+
+    width: auto;
+    height: auto;
 
     object-fit: contain;
 
@@ -1286,15 +1285,9 @@ button:focus-visible,
         position: sticky;
     }
 
-
-    /* Show hamburger */
-
     .menu-button {
         display: flex;
     }
-
-
-    /* Mobile navigation */
 
     .nav-links {
         display: none;
@@ -1323,11 +1316,9 @@ button:focus-visible,
             12px;
     }
 
-
     .nav-links.mobile-open {
         display: flex;
     }
-
 
     .nav-links a {
         width: 100%;
@@ -1342,17 +1333,14 @@ button:focus-visible,
             rgba(255, 255, 255, 0.05);
     }
 
-
     .nav-links a:last-child {
         border-bottom: none;
     }
-
 
     section {
         padding:
             65px 20px;
     }
-
 
     .hero {
         min-height: 560px;
@@ -1362,44 +1350,43 @@ button:focus-visible,
             60px;
     }
 
-
     .hero h1 {
         font-size: 3.5rem;
 
         letter-spacing: -2px;
     }
 
-
     .hero-description {
         font-size: 1rem;
     }
-
 
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
-
     .project-gallery {
         height: 230px;
     }
 
+    .project-image {
+        object-fit: contain;
+
+        object-position:
+            center center;
+    }
 
     .hero-buttons {
         flex-wrap: wrap;
     }
 
-
     .certificate-card {
         flex: 0 0 100%;
     }
-
 
     .certificate-arrow {
         width: 38px;
         height: 38px;
     }
-
 
     .certificate-image-wrapper {
         height: 230px;
@@ -1414,12 +1401,10 @@ button:focus-visible,
         font-size: 0.9rem;
     }
 
-
     .profile-picture {
         width: 40px;
         height: 40px;
     }
-
 
     .hero {
         min-height: 520px;
@@ -1429,11 +1414,9 @@ button:focus-visible,
             50px;
     }
 
-
     .hero h1 {
         font-size: 2.8rem;
     }
-
 
     .button {
         width: 100%;
@@ -1441,52 +1424,53 @@ button:focus-visible,
         text-align: center;
     }
 
-
     .modal-project-image {
         max-width: 90vw;
 
         max-height: 75vh;
     }
 
-
     .modal-prev {
         left: 10px;
     }
-
 
     .modal-next {
         right: 10px;
     }
 
-
     .project-detail ul {
         padding-left: 18px;
     }
-
 
     .certificate-image-wrapper {
         height: 200px;
     }
 
-
     .certificate-info {
         padding: 18px;
     }
-
 
     .education-item {
         padding: 20px;
     }
 
-
-    /*
-       Give the MATLAB certificate enough
-       room on small screens while keeping
-       it centered.
-    */
-
     .certificate-matlab-wrapper {
         height: 210px;
+    }
+
+    .certificate-standard,
+    .certificate-matlab {
+        object-fit: contain;
+
+        object-position:
+            center center;
+    }
+
+    .certificate-ot {
+        object-fit: contain;
+
+        object-position:
+            center top;
     }
 
 }

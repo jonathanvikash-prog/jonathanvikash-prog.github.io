@@ -11,13 +11,19 @@ function toggleMobileMenu() {
         document.getElementById("menu-button");
 
 
-    nav.classList.toggle("mobile-open");
+    nav.classList.toggle(
+        "mobile-open"
+    );
 
-    button.classList.toggle("active");
+    button.classList.toggle(
+        "active"
+    );
 
 
     const isOpen =
-        nav.classList.contains("mobile-open");
+        nav.classList.contains(
+            "mobile-open"
+        );
 
 
     button.setAttribute(
@@ -74,15 +80,19 @@ window.addEventListener(
     "resize",
     function() {
 
-        if (window.innerWidth > 800) {
+        if (
+            window.innerWidth > 800
+        ) {
 
             closeMobileMenu();
 
         }
 
+
+        updateCertificates();
+
     }
 );
-
 
 
 /* =========================================
@@ -105,7 +115,6 @@ function closeProfile() {
     ).style.display = "none";
 
 }
-
 
 
 /* =========================================
@@ -164,7 +173,6 @@ const projectImages = {
 };
 
 
-
 const currentImages = {
 
     sorting: 0,
@@ -178,7 +186,6 @@ const currentImages = {
 };
 
 
-
 function changeProjectImage(
     project,
     direction
@@ -188,7 +195,8 @@ function changeProjectImage(
         projectImages[project];
 
 
-    currentImages[project] += direction;
+    currentImages[project] +=
+        direction;
 
 
     if (
@@ -211,13 +219,16 @@ function changeProjectImage(
     }
 
 
-    updateProjectImage(project);
+    updateProjectImage(
+        project
+    );
 
 }
 
 
-
-function updateProjectImage(project) {
+function updateProjectImage(
+    project
+) {
 
     document.getElementById(
         project + "-image"
@@ -227,18 +238,24 @@ function updateProjectImage(project) {
         ];
 
 
-    updateDots(project);
+    updateDots(
+        project
+    );
 
 }
 
 
-
-function createDots(project) {
+function createDots(
+    project
+) {
 
     const container =
         document.getElementById(
             project + "-dots"
         );
+
+
+    container.innerHTML = "";
 
 
     projectImages[project].forEach(
@@ -255,7 +272,9 @@ function createDots(project) {
             );
 
 
-            if (index === 0) {
+            if (
+                index === 0
+            ) {
 
                 dot.classList.add(
                     "active"
@@ -279,7 +298,9 @@ function createDots(project) {
                 };
 
 
-            container.appendChild(dot);
+            container.appendChild(
+                dot
+            );
 
         }
     );
@@ -287,8 +308,9 @@ function createDots(project) {
 }
 
 
-
-function updateDots(project) {
+function updateDots(
+    project
+) {
 
     const dots =
         document.querySelectorAll(
@@ -299,7 +321,10 @@ function updateDots(project) {
 
 
     dots.forEach(
-        function(dot, index) {
+        function(
+            dot,
+            index
+        ) {
 
             dot.classList.toggle(
                 "active",
@@ -313,7 +338,6 @@ function updateDots(project) {
 }
 
 
-
 /* =========================================
    PROJECT IMAGE MODAL
    ========================================= */
@@ -323,13 +347,17 @@ let activeProject = null;
 let modalImageIndex = 0;
 
 
+function openProjectGallery(
+    project
+) {
 
-function openProjectGallery(project) {
+    activeProject =
+        project;
 
-    activeProject = project;
 
     modalImageIndex =
         currentImages[project];
+
 
     updateModalImage();
 
@@ -341,20 +369,22 @@ function openProjectGallery(project) {
 }
 
 
-
 function closeProjectGallery() {
 
     document.getElementById(
         "project-modal"
     ).style.display = "none";
 
-    activeProject = null;
+
+    activeProject =
+        null;
 
 }
 
 
-
-function changeModalImage(direction) {
+function changeModalImage(
+    direction
+) {
 
     if (!activeProject) {
 
@@ -369,7 +399,8 @@ function changeModalImage(direction) {
         ];
 
 
-    modalImageIndex += direction;
+    modalImageIndex +=
+        direction;
 
 
     if (
@@ -395,7 +426,6 @@ function changeModalImage(direction) {
     updateModalImage();
 
 }
-
 
 
 function updateModalImage() {
@@ -430,7 +460,6 @@ function updateModalImage() {
 }
 
 
-
 /* =========================================
    CERTIFICATIONS
    ========================================= */
@@ -460,7 +489,9 @@ let certificateIndex = 0;
 
 function getCertificatesPerView() {
 
-    if (window.innerWidth <= 800) {
+    if (
+        window.innerWidth <= 800
+    ) {
 
         return 1;
 
@@ -471,28 +502,31 @@ function getCertificatesPerView() {
 }
 
 
-
 function getMaximumCertificateIndex() {
 
     const perView =
         getCertificatesPerView();
 
+
     return Math.max(
         0,
-        certificateImages.length - perView
+        certificateImages.length -
+        perView
     );
 
 }
 
 
-
-function moveCertificates(direction) {
-
-    certificateIndex += direction;
-
+function moveCertificates(
+    direction
+) {
 
     const maximumIndex =
         getMaximumCertificateIndex();
+
+
+    certificateIndex +=
+        direction;
 
 
     if (
@@ -520,6 +554,11 @@ function moveCertificates(direction) {
 }
 
 
+/*
+   Use the actual rendered position of the
+   selected certificate card so every
+   certificate aligns correctly.
+*/
 
 function updateCertificates() {
 
@@ -529,25 +568,52 @@ function updateCertificates() {
         );
 
 
-    const perView =
-        getCertificatesPerView();
+    if (!track) {
+
+        return;
+
+    }
 
 
-    const percentage =
-        certificateIndex *
-        (100 / perView);
+    const cards =
+        track.querySelectorAll(
+            ".certificate-card"
+        );
+
+
+    if (!cards.length) {
+
+        return;
+
+    }
+
+
+    const selectedCard =
+        cards[
+            certificateIndex
+        ];
+
+
+    if (!selectedCard) {
+
+        return;
+
+    }
+
+
+    const movement =
+        selectedCard.offsetLeft;
 
 
     track.style.transform =
         "translateX(-" +
-        percentage +
-        "%)";
+        movement +
+        "px)";
 
 
     updateCertificateDots();
 
 }
-
 
 
 function createCertificateDots() {
@@ -556,6 +622,13 @@ function createCertificateDots() {
         document.getElementById(
             "certificate-dots"
         );
+
+
+    if (!container) {
+
+        return;
+
+    }
 
 
     container.innerHTML = "";
@@ -596,19 +669,21 @@ function createCertificateDots() {
         dot.onclick =
             function() {
 
-                certificateIndex = i;
+                certificateIndex =
+                    i;
 
                 updateCertificates();
 
             };
 
 
-        container.appendChild(dot);
+        container.appendChild(
+            dot
+        );
 
     }
 
 }
-
 
 
 function updateCertificateDots() {
@@ -620,7 +695,10 @@ function updateCertificateDots() {
 
 
     dots.forEach(
-        function(dot, index) {
+        function(
+            dot,
+            index
+        ) {
 
             dot.classList.toggle(
                 "active",
@@ -633,12 +711,13 @@ function updateCertificateDots() {
 }
 
 
-
 /* =========================================
    CERTIFICATE IMAGE MODAL
    ========================================= */
 
-function openCertificate(index) {
+function openCertificate(
+    index
+) {
 
     document.getElementById(
         "certificate-modal-image"
@@ -653,7 +732,6 @@ function openCertificate(index) {
 }
 
 
-
 function closeCertificate() {
 
     document.getElementById(
@@ -661,7 +739,6 @@ function closeCertificate() {
     ).style.display = "none";
 
 }
-
 
 
 /* =========================================
@@ -673,7 +750,8 @@ document.addEventListener(
     function(event) {
 
         if (
-            event.key === "Escape"
+            event.key ===
+            "Escape"
         ) {
 
             closeProfile();
@@ -689,26 +767,31 @@ document.addEventListener(
 
         if (
             activeProject &&
-            event.key === "ArrowLeft"
+            event.key ===
+            "ArrowLeft"
         ) {
 
-            changeModalImage(-1);
+            changeModalImage(
+                -1
+            );
 
         }
 
 
         if (
             activeProject &&
-            event.key === "ArrowRight"
+            event.key ===
+            "ArrowRight"
         ) {
 
-            changeModalImage(1);
+            changeModalImage(
+                1
+            );
 
         }
 
     }
 );
-
 
 
 /* =========================================
@@ -722,7 +805,8 @@ document.getElementById(
     function(event) {
 
         if (
-            event.target === this
+            event.target ===
+            this
         ) {
 
             closeProjectGallery();
@@ -731,7 +815,6 @@ document.getElementById(
 
     }
 );
-
 
 
 /* =========================================
@@ -745,7 +828,8 @@ document.getElementById(
     function(event) {
 
         if (
-            event.target === this
+            event.target ===
+            this
         ) {
 
             closeCertificate();
@@ -756,19 +840,25 @@ document.getElementById(
 );
 
 
-
 /* =========================================
    INITIALIZE PROJECT DOTS
    ========================================= */
 
-createDots("sorting");
+createDots(
+    "sorting"
+);
 
-createDots("ros2");
+createDots(
+    "ros2"
+);
 
-createDots("pet");
+createDots(
+    "pet"
+);
 
-createDots("street");
-
+createDots(
+    "street"
+);
 
 
 /* =========================================
@@ -778,7 +868,6 @@ createDots("street");
 createCertificateDots();
 
 updateCertificates();
-
 
 
 /* =========================================
@@ -803,6 +892,22 @@ window.addEventListener(
 
         }
 
+
+        createCertificateDots();
+
+        updateCertificates();
+
+    }
+);
+
+
+/* =========================================
+   FINAL LOAD RECALCULATION
+   ========================================= */
+
+window.addEventListener(
+    "load",
+    function() {
 
         createCertificateDots();
 
